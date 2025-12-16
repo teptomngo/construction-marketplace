@@ -1,0 +1,25 @@
+# Environment
+.env
+.env.*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Go build artifacts
+bin/
+dist/
+*.exe
+
+# Logs
+*.log
+
+# Office / design files (keep local)
+*.xlsx
+*.docx
+*.pdf
+
+# Temporary folders
+tmp/
