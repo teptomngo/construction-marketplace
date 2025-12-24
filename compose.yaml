@@ -22,5 +22,22 @@ services:
       retries: 20
       start_period: 10s
 
+  api:
+    image: conmesh-api
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    container_name: conmesh-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+
 volumes:
   conmesh-postgres-data:
