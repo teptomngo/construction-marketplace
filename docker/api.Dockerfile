@@ -7,6 +7,9 @@ RUN go mod download
 
 COPY . .
 
+# Build the binary outside the volume-mounted path
+RUN go build -o /usr/local/bin/conmesh-api ./cmd/api
+
 EXPOSE 8080
 
-CMD ["go", "run", "./cmd/api"]
+CMD ["conmesh-api"]
